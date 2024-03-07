@@ -34,3 +34,19 @@ jobs:
         run: echo "World from the 'echo_world3' job"
       - name: Echo World4
         run: echo "World from the 'echo_world4' job"
+  echo_world2:
+    name: Echo World2
+    needs: [echo_world]
+    runs-on: alphine-container
+    environment:
+      name: development
+
+    steps:
+      - name: Echo World
+        run: echo "World from the 'echo_world' job"
+      - name: Echo World2
+        run: echo "World from the 'echo_world2' job"
+      - name: Echo World3
+        run: echo "World from the 'echo_world3' job"
+      - name: Echo World4
+        run: echo "World from the 'echo_world4' job"
